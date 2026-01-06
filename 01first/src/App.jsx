@@ -2,33 +2,41 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { Button } from 'bootstrap'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [color, setColor] = useState("black")
 
   return (
-    <>
-      <div className=' w-50 h-25'>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo img-fluid" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react img-fluid" alt="React logo" />
-        </a>
+    <div className=" w-100 min-vh-100 text-center text-info " style={{ backgroundColor: color }} >
+     <div className="d-flex flex-wrap p-5 justify-content-center fixed-bottom bottom-50 ">
+      <div className=" d-flex flex-wrap bg-light justify-content-center gap-3 p-3 rounded-5  " >
+        <button onClick={() => setColor('red')} 
+        className=" btn btn-outline-light  text-black "
+        style={{ backgroundColor: "red" }}>red</button>
+
+        <button onClick={() => setColor('black')} 
+        className=" btn btn-outline-light  text-light "
+        style={{ backgroundColor: "black" }}>black</button> 
+
+        <button onClick={() => setColor('green')} 
+        className=" btn btn-outline-light  text-black "
+        style={{ backgroundColor: "green" }}>green</button>           
+        
+        <button onClick={() => setColor('skyblue')} 
+        className=" btn btn-outline-light  text-black "
+        style={{ backgroundColor: "skyblue" }}>skyblue</button>   
+        
+        <button onClick={() => setColor('orange')} 
+        className=" btn btn-outline-light  text-black "
+        style={{ backgroundColor: "orange" }}>orange</button>   
+        
+        <button onClick={() => setColor('yellow')} 
+        className=" btn btn-outline-light  text-black "
+        style={{ backgroundColor: "yellow" }}>yellow</button>           
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+     </div>
+    </div>
   )
 }
 
