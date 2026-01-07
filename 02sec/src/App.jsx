@@ -29,8 +29,19 @@ function App() {
 
   return (
     <>
-    <div className=' d-flex bg-dark w-100 min-vh-100  text-info justify-content-center pt-5 '>
-      <div className=' d-flex w-50 mx-auto rounded-5 px-4 my-3 justify-content-center text-info bg-light'> hello world</div>
+    <div className='text-info justify-content-center pt-5 '>
+      <div className=' container   w-50 mx-auto rounded-5 p-4 my-3 justify-content-center text-info  bg-light '>
+        <h1 className=' text-center' >Password Generter</h1> 
+        <div className=' w-50 container my-5 py-5 overflow-hidden rounded-3 d-flex justify-content-center ' > 
+          <input 
+          type="text" 
+          className=' btn btn-outline-light border-0 fs-4 text-center text-dark' placeholder='password' value={password} readOnly />
+          <button className='btn btn-primary'>copy</button>
+        </div> 
+        <div className='d-flex justify-content-center'>
+          <button className='btn btn-primary'>copy</button><button className='btn btn-primary'>copy</button>
+        </div>
+      </div>
     </div>
     </>
   )
