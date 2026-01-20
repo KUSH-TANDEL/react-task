@@ -22,7 +22,7 @@ alert("User added successfully");
 
   return (
     <>
-      <div>Add user data</div><br />
+      <h3>Add user data</h3><br />
       <input type="text" onChange={(event)=>setName(event.target.value)} placeholder='Enter your Name' /> <br /> <br />
       <input type="number" onChange={(event)=>setAge(event.target.value)} placeholder='Enter your Age' /> <br /> <br />
       <input type="email" onChange={(event)=>setEmail(event.target.value)} placeholder='Enter your Email' /> <br /> <br />
