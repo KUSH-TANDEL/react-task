@@ -1,0 +1,16 @@
+
+.list-link{
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  border: 2px solid black;
+  margin: 0;
+  padding: 20px;
+}
+
+.nav-ul{
+  display: flex;
+  gap: 20px;
+  list-style: none;
+
+}
