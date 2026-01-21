@@ -12,37 +12,37 @@ function App() {
   const handleChange = (e) => {
     setName(e.target.value)
     console.log(name)
-    if(e.target.value.length>5){
+    if (e.target.value.length > 5) {
       setNameErr("Enter less then 5 character")
     }
-    else{
+    else {
       setNameErr()
     }
   }
 
 
-    const handlepassword = (e) => {
-      setPassword(e.target.value)
-      let regex = /^[A-Z0-9  ]+$/i;
-    if(regex.test(e.target.value)){
+  const handlepassword = (e) => {
+    setPassword(e.target.value)
+    let regex = /^[A-Z0-9  ]+$/i;
+    if (regex.test(e.target.value)) {
       setpasswordErr()
     }
-    else{
+    else {
       setpasswordErr("Only Number and Alpabets allowed")
     }
   }
 
   return (
     <>
-      <input type="text" className={nameErr?'error':''} 
-      onChange={handleChange} placeholder="Enter name" /> 
-      <div>{nameErr && nameErr}</div> <br/><br/>
+      <input type="text" className={nameErr ? 'error' : ''}
+        onChange={handleChange} placeholder="Enter name" />
+      <div>{nameErr && nameErr}</div> <br /><br />
 
-      <input type="text" className={passwordErr?'error':''} 
-      onChange={handlepassword} placeholder="Enter password" /><br/><br/>
-      <span>{passwordErr && passwordErr}</span> <br/><br/>
+      <input type="text" className={passwordErr ? 'error' : ''}
+        onChange={handlepassword} placeholder="Enter password" /><br /><br />
+      <span>{passwordErr && passwordErr}</span> <br /><br />
 
-      <button disabled={nameErr || passwordErr } >login</button> 
+      <button disabled={nameErr || passwordErr} >login</button>
 
 
     </>
