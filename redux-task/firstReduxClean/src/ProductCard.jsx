@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import AddToCart from './AddToCart'
+import { addItem, removeItem } from './redux/slice'
 
 function ProductCard() {
 
@@ -15,8 +15,12 @@ function ProductCard() {
     <h3 className="product-title">head phone</h3>
     <p className="product-price">$49.99</p>
 
-    <button onClick={()=>dispatch(AddToCart())}  className="add-to-cart">
+    <button onClick={()=>dispatch(addItem(1))}  className="add-to-cart">
       Add to Cart
+    </button>
+    <br /> <br />
+    <button onClick={()=>dispatch(removeItem(1))}  className="delete-to-cart">
+      Delete from Cart
     </button>
   </div>
 </div>
@@ -24,4 +28,4 @@ function ProductCard() {
   )
 }
 
-export default ProductCard
+export default ProductCard;

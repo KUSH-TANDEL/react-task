@@ -130,7 +130,7 @@
   font-weight: bold;
 }
 .product-card {
-  width: 250px;
+  width: 400px;
   border: 1px solid #ddd;
   border-radius: 8px;
   display: flex;
@@ -177,4 +177,17 @@
 
 .add-to-cart:hover {
   background-color: #555;
+}
+
+.delete-to-cart {
+  padding: 8px 14px;
+  background-color: #e62121;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-to-cart:hover {
+  background-color: #970a0a;
 }
