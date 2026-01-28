@@ -1,4 +1,4 @@
-import { useState ,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import { useDispatch } from 'react-redux'
 import { removeAllItem } from './redux/slice'
@@ -18,14 +18,14 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
-     <Header />
-    <Routes>
-      <Route path='/' element={<ProductCard />} />
-      <Route path='/cart' element={<CartList />} />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' element={<ProductCard />} />
+          <Route path='/cart' element={<CartList />} />
 
-    </Routes>    
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
