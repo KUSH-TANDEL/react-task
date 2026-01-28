@@ -22,7 +22,7 @@ const addToCart = createSlice({
            
         },
         removeAllItem:(state)=>{
-            state.value=0;
+            state.items=[];
         }
     }
 })
