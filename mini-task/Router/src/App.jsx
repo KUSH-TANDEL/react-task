@@ -3,6 +3,8 @@ import { Route ,Routes } from 'react-router-dom'
 import Home from './Home'
 import Header from './Header'
 import Footer from './Footer'
+import About from './About'
+import ContactUs from './ContactUs'
 
 function App() {
 
@@ -12,7 +14,8 @@ function App() {
     <Header />
      <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/about" element={<h1>hello world</h1>} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<ContactUs />} />
      </Routes>
     <Footer />
     </>

@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+}
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+.cart1 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cart-icon {
+  font-size: 28px;
+}
+
+/* Count badge */
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Product Image */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Card Content */
+.card > div {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Title */
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.3;
+}
+
+/* Brand */
+.brand {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Price */
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-top: 4px;
+}
+
+/* Rating */
+.rating {
+  font-size: 14px;
+  color: #f39c12;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+  margin-top: auto;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.add-to-cart:hover {
+  background: #333;
+}
+
+.add-to-cart:active {
+  transform: scale(0.97);
+}
+
+.btn-disabled{
+ background:rgb(188, 173, 173);
+}
+.btn-disabled:hover{
+ background:rgb(188, 173, 173);
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: #db5e5e;
+  background:#000;
+
+}
+
+.remove-btn:hover {
+  color: #e74c3c;
+}
+
+.cart-container{
+  max-width: 800px;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1) ;
+}
+
+.cart-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-header h2{
+font-size: 20px;
+margin: 0;
+}
+
+.cart-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0px;
+  border-bottom: 1px solid #ccc;
+}
+
+.item-info{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.item-info img{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item-actions{
+  text-align: right;
+}
+
+.item-actions .price{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.cart-footer{
+  text-align: right;
+  margin-top: 20px;
+  font-weight: bold;
+}

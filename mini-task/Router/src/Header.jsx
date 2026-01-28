@@ -1,6 +1,6 @@
 import React from 'react'
 import img from './Img.js' ;
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 
 function Header() {
@@ -14,9 +14,9 @@ function Header() {
     </button>
     <div className="collapse navbar-collapse justify-content-end px-5" id="navbarNavAltMarkup">
       <div className="navbar-nav">
-        <Link className="nav-link text-black fw-bolder active" aria-current="page" to="/">Home</Link>
-        <Link className="nav-link text-black  px-lg-5" to="/about">About us</Link>
-        <a className="nav-link  text-light " href="Contact.html"><span className="bggreen px-3 py-2 rounded-5 ">Contact Us<img src={img.vector} className="ms-2 pb-1"/> </span> </a>
+        <NavLink className="nav-link text-black" aria-current="page" to="/">Home</NavLink>
+        <NavLink className="nav-link text-black  px-lg-5" to="/about">About us</NavLink>
+        <NavLink className="nav-link  text-light" to="/contact"><span className="bggreen px-3 py-2 rounded-5 ">Contact Us<img src={img.vector} className="ms-2 pb-1"/> </span> </NavLink>
       </div>
     </div>
   </div>
