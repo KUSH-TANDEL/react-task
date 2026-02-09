@@ -9,41 +9,44 @@ function App() {
   const [users, setUsers] = useState([])
   const [page, setPage] = useState(1)
   const [limit, setLimit] = useState(8)
+  const [allusers, setAllUsers] = useState([]);
   const [totalPages, setTotalPages] = useState(0)
   const [inputValue, setInputValue] = useState('');
 
-  
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await userData();
-      setTotalPages( Math.ceil(data.length / limit) );
+      setAllUsers(data);
+
+      setTotalPages(Math.ceil(data.length / limit));
       setUsers(data.slice((page - 1) * limit, page * limit));
     }
     fetchData();
-    
-    
-    
   }, [page, limit]);
-  
-  console.log(totalPages );
-  console.log(users);
 
 
 
-  
+  const filteredUsers = allusers.filter(user =>
+    user.firstName.toLowerCase().includes(inputValue.toLowerCase())
+  );
 
-  console.log(inputValue);
+  const paginatedUsers = filteredUsers.slice(
+    (page - 1) * limit,
+    page * limit
+  );
 
   return (
     <>
       <nav className="navbar navbar-light bg-light">
         <div className="container-fluid justify-content-center">
-          <form 
-          className="d-flex"
-          onSubmit={(e) => {e.preventDefault();
-          setPage(1);
-          }}
-          > 
+          <form
+            className="d-flex"
+            onSubmit={(e) => {
+              e.preventDefault();
+              setPage(1);
+            }}
+          >
             <input className="form-control me-2"
               onChange={(e) => setInputValue(e.target.value)}
               type="search" placeholder="Search" aria-label="Search" />
@@ -56,9 +59,7 @@ function App() {
 
       <div className='cards w-100'>
         {
-          users.filter((user) => 
-            user.firstName.toLowerCase().includes(inputValue.toLowerCase()))
-             .map((user) => (
+          paginatedUsers.map((user) => (
             <div key={user.id} className=''>
               <div key={user.id} className="card my-4 mx-4 ">
                 <img src={user.image} className="card-img-top" alt="..." />
@@ -87,14 +88,14 @@ function App() {
 
             <li className="page-item active"><button className="page-link" onClick={() => setPage(page)}>{page}</button></li>
 
-           { page < totalPages && (
-             <>
-              <li className="page-item"><button className="page-link" onClick={() => setPage(page + 1)}>{page + 1}</button></li>
-              {page + 1 < totalPages && (
-                <li className="page-item"><button className="page-link" onClick={() => setPage(page + 2)}>{page + 2}</button></li>
-              )}
-             </>
-           )}
+            {page < totalPages && (
+              <>
+                <li className="page-item"><button className="page-link" onClick={() => setPage(page + 1)}>{page + 1}</button></li>
+                {page + 1 < totalPages && (
+                  <li className="page-item"><button className="page-link" onClick={() => setPage(page + 2)}>{page + 2}</button></li>
+                )}
+              </>
+            )}
 
             <li className="page-item"><button className="page-link" onClick={() => setPage(page < totalPages ? page + 1 : page)}>Next</button></li>
           </ul>
