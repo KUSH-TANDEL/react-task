@@ -1,0 +1,32 @@
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-top: 4px;
+}
+.rating {
+  font-size: 14px;
+  color: #f39c12;
+}
+
+
+.add-to-cart {
+  margin-top: auto;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #000000;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  bottom: 10px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.add-to-cart:hover {
+  background: #333;
+}
+
+.topspace{
+  margin-top: 10px;
+}
