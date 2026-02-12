@@ -10,13 +10,13 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<ProctectedRoute><Home /></ProctectedRoute>} ></Route>
-      <Route path='/about' element={<ProctectedRoute><About /></ProctectedRoute>} ></Route>
-      <Route path='/login' element={<Login />} ></Route>
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<ProctectedRoute><Home /></ProctectedRoute>} ></Route>
+          <Route path='/about' element={<ProctectedRoute><About /></ProctectedRoute>} ></Route>
+          <Route path='/login' element={<Login />} ></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
