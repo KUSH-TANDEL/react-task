@@ -27,8 +27,12 @@ function DisplayData() {
             product.title.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setFilteredProducts(filtered);
-        return filtered;
+        setTotalPages(Math.ceil(filtered.length / limit));
+        setPage(1); 
     }
+
+
+
 
     const paginatedProducts = filteredProducts.slice(
         (page - 1) * limit,
@@ -59,7 +63,9 @@ function DisplayData() {
                 ))}
             </div>
 
-            <Pagination page={page} totalPages={totalPages} setPage={setPage} />
+            {totalPages > 1 && (
+                <Pagination page={page} totalPages={totalPages} setPage={setPage} />
+            )}
 
         </>
     )
