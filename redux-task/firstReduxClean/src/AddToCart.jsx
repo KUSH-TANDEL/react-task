@@ -2,14 +2,14 @@
 import { useSelector } from 'react-redux'
 
 function AddToCart() {
-    const selector = useSelector((state)=>state.cart.value);
-    console.log(selector);
+    const {value} = useSelector((state)=>state.cart);
+    console.log(value);
     
   return (
     <>
   <div className="cart1">
   <span className="cart-icon">🛒</span>
-  <span className="cart-count">{selector}</span>
+  <span className="cart-count">{value}</span>
   </div>
     </>
   )
