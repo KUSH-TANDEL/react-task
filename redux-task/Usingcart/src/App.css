@@ -289,3 +289,11 @@
   border-radius: 5px;
   text-align: center;
 }
+
+.card >div {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: auto;
+}
